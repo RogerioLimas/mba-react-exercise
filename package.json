@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "proxy-polyfill": "^0.3.2",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-dom": "^17.0.2",
@@ -31,7 +32,7 @@
       "not op_mini all"
     ],
     "development": [
-      "last 2 versions, >0.2%, ie >= 11"
+      "last 2 versions, > 0.2%, ie >= 11"
     ]
   }
 }
