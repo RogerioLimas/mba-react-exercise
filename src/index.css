@@ -1,13 +1,127 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.App {
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*  FROM HERE WE HAVE REAL LIFE CSS */
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .container {
+    border: solid 1px #000000;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    min-width: 90%;
+    min-height: 90%;
+  }  
+}
+@media only screen and (min-width: 769px) {
+  .container {
+    border: solid 1px #000000;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    min-width: 50%;
+    min-height: 50%;
+  }
+}
+.data {
+  display: inline-block;
+  text-align: left;
+  padding: 20px 80px 20px 80px;
+}
+
+.data label {
+  font-weight: bold;
+}
+
+.data input {
+  float: right;
+}
+
+.data .row {
+  clear: both;
+}
+
+.data .form button {
+  margin-top: 2em;
+  display: inline;
+  border: 1px solid;
+  color: #FFF;
+  min-width: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 2px #000000;
+  background-color: #3b64ce;
+  border: #3b64ce;
+}
+
+.data .form button.green {
+  margin-top: 2em;
+  display: inline;
+  border: 1px solid;
+  color: #FFF;
+  min-width: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 2px #000000;
+  background-color: #006422;
+  border: #006422;
+}
+
+.data .form button:hover {
+  background-color: #504869;
+  border: 1px solid #504869;
+}
+
+.data .form button:active {
+  background-color: #504869;
+  border: 1px solid #504869;
+  box-shadow: 1.5px 1.5px 2px #808080;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
