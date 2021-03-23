@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import ImcTableView from './views/ImcTableView';
+import ImcView from './views/ImcView';
 import ImcController from './controllers/ImcController';
 import Person from './domain/Person';
 
@@ -9,19 +10,22 @@ import "./App.css";
 function App() {
 
   const [controller,] = useState(new ImcController());
+  const [person, setPerson] = useState(new Person());
   
-  const calculateImc = () => {
+  const calculateImc = async () => {
     const heightElem = document.querySelector("#altura");
     const weightElem = document.querySelector("#peso");
   
     if(!heightElem) throw Error("height is required field!");
     if(!weightElem) throw Error("weight is required field!");
   
-    var person = new Person(
+    var newPerson = new Person(
       parseFloat(heightElem.value), 
       parseFloat(weightElem.value));
   
-    controller.calculate(person.toObject());
+    const calculatedPerson = await controller.calculate(newPerson.toObject());
+    setPerson(calculatedPerson);
+    
   }
 
   return (
@@ -46,7 +50,7 @@ function App() {
         </div>
       </div>
       <hr />
-      {/* <ImcView class="data" /> */}
+      <ImcView class="data" person={person} />
     </div>
   );
 }

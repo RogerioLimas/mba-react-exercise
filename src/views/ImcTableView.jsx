@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import ImcController from '../controllers/ImcController';
 
-function  ImcTableView() {
+function ImcTableView() {
 
   const [controller,] = useState(new ImcController());
   const [tableData, setTableData] = useState([]);
