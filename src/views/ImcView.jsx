@@ -1,6 +1,10 @@
-function ImcView({ person, className }) {
+import { useContext } from 'react';
 
-  console.log("imc view rendering...");
+import { PersonContext } from '../contexts/PersonContextProvider';
+
+function ImcView({ className }) {
+
+  const { person } = useContext(PersonContext);
 
   return (
     <div className={className}>

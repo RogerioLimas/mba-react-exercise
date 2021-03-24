@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+
+import { PersonContext } from './contexts/PersonContextProvider';
 
 import ImcTableView from "./views/ImcTableView";
 import ImcView from "./views/ImcView";
@@ -9,8 +11,9 @@ import Person from "./domain/Person";
 import "./App.css";
 
 function App() {
+  const { setPerson } = useContext(PersonContext);
+
   const [controller,] = useState(new ImcController());
-  const [person, setPerson] = useState(new Person());
  
   const calculateImc = async (height, weight) => {
     var newPerson = new Person(parseFloat(height),parseFloat(weight));
@@ -27,11 +30,11 @@ function App() {
             <ImcTableView />
           </div>
           <hr />
-          <ImcForm onSubmit={calculateImc} person={person} />
+          <ImcForm onSubmit={calculateImc} />
         </div>
       </div>
       <hr />
-      <ImcView class="data" person={person} />
+      <ImcView class="data" />
     </div>
   );
 }

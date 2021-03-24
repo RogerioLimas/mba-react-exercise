@@ -4,13 +4,18 @@ import 'proxy-polyfill/proxy.min.js';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import PersonContextProvider from './contexts/PersonContextProvider';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import './index.css';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PersonContextProvider>
+      <App />
+    </PersonContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
