@@ -1,16 +1,16 @@
 import { useState } from "react";
 
-import { usePerson } from './hooks/usePerson.hook';
+import { usePerson } from '../hooks/usePerson.hook';
 
-import ImcTableView from "./views/ImcTableView";
-import ImcView from "./views/ImcView";
-import ImcForm from "./views/forms/ImcForm";
-import ImcController from "./controllers/ImcController";
-import Person from "./domain/Person";
+import ImcTableView from "../views/ImcTableView";
+import ImcView from "../views/ImcView";
+import ImcForm from "../views/forms/ImcForm";
+import ImcController from "../controllers/ImcController";
+import Person from "../domain/Person";
 
-import "./App.css";
+import "./ImcApp.css";
 
-function App() {
+function ImcApp() {
   const [,setPerson] = usePerson();
   const [controller,] = useState(new ImcController());
  
@@ -38,4 +38,4 @@ function App() {
   );
 }
 
-export default App;
+export default ImcApp;
