@@ -6,7 +6,11 @@ export const PersonContext = createContext();
 export default function PersonContextProvider({children}) {
   const [person, setPerson] = useState(new Person());
 
-  return <PersonContext.Provider value={{person, setPerson}}>
+  const setData = (data) => {
+    setPerson(data);
+  }
+
+  return <PersonContext.Provider value={{person, setData}}>
     {children}
   </PersonContext.Provider>
 }
