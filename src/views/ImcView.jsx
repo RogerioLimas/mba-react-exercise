@@ -1,6 +1,6 @@
-function ImcView(props) {
-  console.log('rendering...');
-  const { person, className } = props;
+function ImcView({ person, className }) {
+
+  console.log("imc view rendering...");
 
   return (
     <div className={className}>
