@@ -8,6 +8,7 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import PersonContextProvider from './contexts/PersonContextProvider';
+import DeclarationContextProvider from './contexts/DeclarationContextProvider';
 
 import reportWebVitals from './reportWebVitals';
 
@@ -22,30 +23,31 @@ function render() {
       <div>
         <ul>
           <li>
-            <Link to="/imc">Imc App</Link>
+            <Link to='/imc'>Imc App</Link>
           </li>
           <li>
-            <Link to="/other">Other App</Link>
+            <Link to='/other'>Other App</Link>
           </li>
         </ul>
       </div>
       <br />
       <Switch>
-        <Route path="/imc">
+        <Route path='/imc'>
           <Suspense fallback={<span>loading imc app...</span>}>
             <PersonContextProvider>
               <ImcApp />
             </PersonContextProvider>
           </Suspense>
         </Route>
-        <Route path="/other">
+        <Route path='/other'>
           <Suspense fallback={<span>loading other app...</span>}>
-            <OtherApp />
+            <DeclarationContextProvider>
+              <OtherApp />
+            </DeclarationContextProvider>
           </Suspense>
         </Route>
       </Switch>
-    </Router>
-    ,
+    </Router>,
     document.getElementById('root')
   );
 }

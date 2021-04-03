@@ -1,7 +1,6 @@
 import { usePerson } from '../hooks/usePerson.hook';
 
 function ImcView({ className }) {
-
   const [person] = usePerson();
 
   return (

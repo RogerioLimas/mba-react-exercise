@@ -19,7 +19,7 @@ export default class ImcDriver {
 
   getTable() {
     return this
-      .get('http://localhost:8080', '/imc/table')
+      .get('http://localhost:8081', '/imc/table')
       .then(function (rawResponse) {
         return rawResponse.json();
       });
@@ -31,7 +31,7 @@ export default class ImcDriver {
    */
   async calculate(person) {
     const response = await this.xhr
-      .post('http://localhost:8080', '/imc/calculate', person);
+      .post('http://localhost:8081', '/imc/calculate', person);
 
     return await response.json();
   }

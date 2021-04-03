@@ -18,6 +18,7 @@ function ImcApp() {
     var newPerson = new Person(parseFloat(height),parseFloat(weight));
 
     const calculatedPerson = await controller.calculate(newPerson.toObject());
+
     setPerson(calculatedPerson);
   };
 
