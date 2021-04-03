@@ -16,7 +16,7 @@ $ docker-compose up -d
 Open your browser and access the URL http://localhost:3000/
 
 
-## Listing the servicers
+## Listing the running containers
 After running `docker ps` you should get this result:
 
 ``` shell
