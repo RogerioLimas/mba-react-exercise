@@ -8,7 +8,7 @@ import IrpfController from '../controllers/IrpfController';
 import Declaration from '../domain/Declaration';
 import IrpfView from '../views/IrpfView';
 
-function OtherApp() {
+function IrpfApp() {
   const [, setDeclaration] = useDeclaration();
   const [controller] = useState(new IrpfController());
 
@@ -42,4 +42,4 @@ function OtherApp() {
   );
 }
 
-export default OtherApp;
+export default IrpfApp;

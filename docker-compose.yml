@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  react_app:
+    image: rogeranjo/irpf-imc:latest
+    depends_on:
+      - irpf_api
+      - imc_api
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+    - '3000:3000'
+    environment:
+      - NODE_ENV=development
+    container_name: react_app
+    networks:
+      - fit-network
+
+  irpf_api:
+    image: caiobastos12/irpf-api:1.0.0
+    environment:
+      TZ: America/Sao_Paulo    
+    ports:
+      - "8080:8080"
+    command: mvn spring-boot:run
+    networks:
+      - fit-network
+
+  imc_api:
+    image: caiobastos12/imc-calc-api:1.0.0
+    environment:
+      TZ: America/Sao_Paulo    
+    ports:
+      - "8081:8080"
+    command: mvn spring-boot:run
+    networks:
+      - fit-network
+
+networks:
+    fit-network:
+        driver: bridge

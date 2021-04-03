@@ -16,7 +16,7 @@ import './index.css';
 
 function render() {
   const ImcApp = lazy(() => import('./apps/ImcApp'));
-  const OtherApp = lazy(() => import('./apps/OtherApp'));
+  const IrpfApp = lazy(() => import('./apps/IrpfApp'));
 
   ReactDOM.render(
     <Router>
@@ -26,7 +26,7 @@ function render() {
             <Link to='/imc'>Imc App</Link>
           </li>
           <li>
-            <Link to='/other'>Other App</Link>
+            <Link to='/irpf'>Irpf App</Link>
           </li>
         </ul>
       </div>
@@ -39,10 +39,10 @@ function render() {
             </PersonContextProvider>
           </Suspense>
         </Route>
-        <Route path='/other'>
-          <Suspense fallback={<span>loading other app...</span>}>
+        <Route path='/irpf'>
+          <Suspense fallback={<span>loading irpf app...</span>}>
             <DeclarationContextProvider>
-              <OtherApp />
+              <IrpfApp />
             </DeclarationContextProvider>
           </Suspense>
         </Route>
